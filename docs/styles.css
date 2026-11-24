@@ -280,19 +280,12 @@ h2 { font-size: clamp(2.2rem, 4.1vw, 4.15rem); letter-spacing: -.035em; }
 .section { padding-block: clamp(4.45rem, 8vw, 8.5rem); scroll-margin-top: .5rem; }
 .section__heading { margin-bottom: clamp(1.65rem, 3.5vw, 2.75rem); }
 .section__heading h2, .modes h2 { margin-top: .65rem; }
-.section__heading > p:last-child, .section__intro, .modes__copy > p:not(.eyebrow) {
+.section__heading > p:last-child, .modes__copy > p:not(.eyebrow) {
   margin-top: .95rem;
   max-width: 36rem;
   color: var(--muted);
 }
 
-.section__heading--action {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem 2rem;
-}
 
 .footage__layout {
   display: grid;
