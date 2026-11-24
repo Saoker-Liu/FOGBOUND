@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>雾海对弈 · FOGBOUND</title>
+  <meta name="description" content="《雾海对弈》是一款 Windows 海战战术游戏。观看布阵、照明、防空和王牌的实机演示，下载 Windows x64 版。">
+  <meta name="theme-color" content="#09191d">
+  <meta property="og:title" content="雾海对弈 · FOGBOUND">
+  <meta property="og:description" content="在迷雾中布阵、侦察，以战术卡指挥舰队。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saoker-liu.github.io/FOGBOUND/">
+  <meta property="og:image" content="https://saoker-liu.github.io/FOGBOUND/media/voyage.webp">
+  <link rel="canonical" href="https://saoker-liu.github.io/FOGBOUND/">
+  <link rel="icon" type="image/svg+xml" href="media/anchor.svg">
+  <link rel="preload" as="image" href="media/voyage.webp">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到内容</a>
+  <header class="masthead">
+    <div class="masthead__inner shell">
+      <a class="wordmark" href="#top" aria-label="FOGBOUND 首页">
+        <img src="media/anchor.svg" alt="" width="30" height="30">
+        <span>FOGBOUND</span>
+      </a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#footage">实机演示</a>
+        <a href="#campaign">战役</a>
+        <a href="#modes">玩法</a>
+      </nav>
+      <a class="nav__download" href="#download">获取游戏 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="title">
+      <video class="hero__backdrop" id="sea-motion" muted playsinline loop preload="none" poster="media/voyage.webp"
+        data-src="media/voyage.mp4" aria-hidden="true" tabindex="-1"></video>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__inner shell">
+        <div class="hero__content">
+          <p class="eyebrow"><span>海战战术游戏</span></p>
+          <h1 id="title">雾海对弈</h1>
+          <p class="hero__english" aria-hidden="true">FOGBOUND</p>
+          <p class="hero__description">在迷雾中布阵、侦察，以手中的战术卡指挥舰队。</p>
+          <div class="hero__actions">
+            <a class="button button--gold" href="https://github.com/Saoker-Liu/FOGBOUND/raw/refs/tags/v1.0.0/FOGBOUND-v1.0.0.exe">下载 Windows x64 <span aria-hidden="true">↓</span></a>
+            <a class="button button--glass" href="media/overview.mp4" id="open-reel"
+               data-reel-title="雾海对弈 · 实机短片" data-poster="media/voyage.webp">
+              <span class="play-icon" aria-hidden="true"></span>观看实机短片
+            </a>
+          </div>
+          <p class="hero__edition">v1.0.0 <span aria-hidden="true">·</span> 简体中文</p>
+        </div>
+        <button type="button" class="motion-control" id="motion-toggle" aria-pressed="false" hidden>
+          <span class="motion-control__icon" aria-hidden="true"></span>
+          <span class="sr-only">暂停背景动画</span>
+        </button>
+      </div>
+    </section>
+
+    <div class="facts">
+      <div class="facts__inner shell">
+        <div><strong>60 关</strong><span>序章至第五章</span></div>
+        <div><strong>自由演习</strong><span>自选海图、舰队与牌组</span></div>
+        <div><strong>双人对战</strong><span>同一局域网联机</span></div>
+      </div>
+    </div>
+
+    <section class="section footage shell" id="footage" aria-labelledby="footage-heading">
+      <header class="section__heading" data-reveal>
+        <p class="eyebrow"><span>实机演示</span></p>
+        <h2 id="footage-heading">从布阵到交战</h2>
+        <p>观察海图，选择战术牌，再用行动力把命令送出。</p>
+      </header>
+      <div class="footage__layout" data-reveal>
+        <figure class="screen" id="clip-panel" role="tabpanel" aria-labelledby="clip-tab-deployment">
+          <div class="screen__window">
+            <video class="clip-video" id="clip-video" controls playsinline muted loop preload="none"
+              src="media/deployment.mp4" poster="media/deployment.webp" aria-label="舰队布阵">
+              <a href="media/deployment.mp4">打开舰队布阵视频</a>
+            </video>
+          </div>
+          <figcaption class="screen__caption">
+            <strong id="clip-title">舰队布阵</strong>
+            <span id="clip-caption">选定舰艇与落点。右侧编成表显示舰型、占格和已部署的坐标。</span>
+          </figcaption>
+        </figure>
+        <div class="clip-tabs" id="clip-tabs" role="tablist" aria-label="实机片段">
+          <button type="button" class="clip-tab" role="tab" id="clip-tab-deployment"
+            aria-controls="clip-panel" aria-selected="true" data-clip="deployment" data-caption="选定舰艇与落点。右侧编成表显示舰型、占格和已部署的坐标。">
+            <img src="media/deployment.webp" alt="" width="144" height="81" loading="lazy">
+            <span class="clip-tab__title">舰队布阵</span>
+            <span class="play-icon" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="clip-tab" role="tab" id="clip-tab-flare"
+            aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="flare" data-caption="打出信号弹照亮一片海域，发现目标后用炮击牌下令。">
+            <img src="media/flare.webp" alt="" width="144" height="81" loading="lazy">
+            <span class="clip-tab__title">照明与交火</span>
+            <span class="play-icon" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="clip-tab" role="tab" id="clip-tab-interception"
+            aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="interception" data-caption="进入舰队防空范围的敌机被击落，空袭随之中止。">
+            <img src="media/interception.webp" alt="" width="144" height="81" loading="lazy">
+            <span class="clip-tab__title">防空拦截</span>
+            <span class="play-icon" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="clip-tab" role="tab" id="clip-tab-ace"
+            aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="ace" data-caption="打出「猎火鸡大赛！」，触发全屏演出并扩大己舰防空范围。">
+            <img src="media/ace.webp" alt="" width="144" height="81" loading="lazy">
+            <span class="clip-tab__title">王牌出牌</span>
+            <span class="play-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section campaign" id="campaign" aria-labelledby="campaign-heading">
+      <div class="shell">
+        <header class="section__heading section__heading--action" data-reveal>
+          <div>
+            <p class="eyebrow"><span>单人战役</span></p>
+            <h2 id="campaign-heading">六段航程，六十关</h2>
+            <p class="section__intro">从本土演习启航。沿战役航图推进，也可回看已经完成的剧情。</p>
+          </div>
+          <a class="button button--glass" id="open-campaign-reel" href="media/campaign.mp4"
+             data-reel-title="序章 · 第三盏航灯" data-poster="media/campaign.webp">
+            <span class="play-icon" aria-hidden="true"></span>观看序章片段
+          </a>
+        </header>
+        <div class="atlas" data-reveal>
+          <div class="atlas__tabs" id="chapter-tabs" role="tablist" aria-label="战役章节">
+            <button type="button" class="atlas__tab" role="tab" id="chapter-tab-prologue"
+              aria-controls="chapter-panel" aria-selected="true" data-art="prologue" data-caption="从布阵和副炮齐射学起，熟悉地形、照明与舰队机动。">
+              <span class="atlas__label">序章</span>
+              <strong>第三盏航灯</strong>
+            </button>
+            <button type="button" class="atlas__tab" role="tab" id="chapter-tab-tidal-gate"
+              aria-controls="chapter-panel" aria-selected="false" tabindex="-1" data-art="tidal-gate" data-caption="测绘雷区，带舰队穿过封锁水道。">
+              <span class="atlas__label">第一章</span>
+              <strong>潮门留灯</strong>
+            </button>
+            <button type="button" class="atlas__tab" role="tab" id="chapter-tab-sky-lane"
+              aria-controls="chapter-panel" aria-selected="false" tabindex="-1" data-art="sky-lane" data-caption="用舰载机侦察和争夺制空权，布置舰队防空。">
+              <span class="atlas__label">第二章</span>
+              <strong>云上航线</strong>
+            </button>
+            <button type="button" class="atlas__tab" role="tab" id="chapter-tab-deep-echo"
+              aria-controls="chapter-panel" aria-selected="false" tabindex="-1" data-art="deep-echo" data-caption="部署潜艇，用声呐和深弹追踪水下目标。">
+              <span class="atlas__label">第三章</span>
+              <strong>深处有回声</strong>
+            </button>
+            <button type="button" class="atlas__tab" role="tab" id="chapter-tab-iron-rain"
+              aria-controls="chapter-panel" aria-selected="false" tabindex="-1" data-art="iron-rain" data-caption="识别舰艇装甲，为炮击选择合适的弹药。">
+              <span class="atlas__label">第四章</span>
+              <strong>铁雨之后</strong>
+            </button>
+            <button type="button" class="atlas__tab" role="tab" id="chapter-tab-homeward-lights"
+              aria-controls="chapter-panel" aria-selected="false" tabindex="-1" data-art="homeward-lights" data-caption="调配补给、修理受损舰艇，支援舰队完成任务。">
+              <span class="atlas__label">第五章</span>
+              <strong>灯火接力</strong>
+            </button>
+          </div>
+          <div class="atlas__panel" id="chapter-panel" role="tabpanel" aria-labelledby="chapter-tab-prologue" tabindex="0">
+            <div class="atlas__art" aria-hidden="true">
+              <img id="chapter-art" src="media/prologue.webp" alt="" width="1440" height="810" loading="lazy">
+            </div>
+            <div class="atlas__legend">
+              <p class="eyebrow" id="chapter-label">序章</p>
+              <h3 id="chapter-title">第三盏航灯</h3>
+              <p id="chapter-caption">从布阵和副炮齐射学起，熟悉地形、照明与舰队机动。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section modes shell" id="modes" aria-labelledby="modes-heading">
+      <div class="modes__copy" data-reveal>
+        <p class="eyebrow"><span>自由演习与局域网</span></p>
+        <h2 id="modes-heading">组舰队，配牌组</h2>
+        <p>选择海图、自定义舰队和战术牌。自由演习对阵电脑，也可以在同一局域网和朋友交手。</p>
+        <dl class="tactics" id="tactic-details" aria-live="polite">
+          <dt id="tactic-title">信号弹</dt>
+          <dd class="tactics__type" id="tactic-type">侦察</dd>
+          <dd id="tactic-caption">划亮邻近海域，为接下来的炮击确认目标。</dd>
+        </dl>
+      </div>
+      <div class="card-fan" aria-label="查看战术牌" data-reveal>
+        <button class="tactic-card" type="button" aria-label="信号弹"
+          aria-pressed="true" aria-controls="tactic-details" data-type="侦察" data-caption="划亮邻近海域，为接下来的炮击确认目标。">
+          <img src="media/card-flare.webp" alt="" width="384" height="576" loading="lazy">
+        </button>
+        <button class="tactic-card" type="button" aria-label="舰载战斗机"
+          aria-pressed="false" aria-controls="tactic-details" data-type="航空" data-caption="争夺制空权，限制对方派出其他类型的舰载机。">
+          <img src="media/card-carrier_fighter.webp" alt="" width="384" height="576" loading="lazy">
+        </button>
+        <button class="tactic-card" type="button" aria-label="猎火鸡大赛！"
+          aria-pressed="false" aria-controls="tactic-details" data-type="战术王牌" data-caption="让一艘己舰的防空半径扩大 2 格，持续 3 个己方回合。">
+          <img src="media/card-turkey_shoot.webp" alt="" width="384" height="576" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <section class="download" id="download" aria-labelledby="download-heading">
+      <div class="download__inner shell" data-reveal>
+        <div>
+          <h2 id="download-heading">下载《雾海对弈》</h2>
+          <p>Windows x64 <span aria-hidden="true">·</span> v1.0.0 <span aria-hidden="true">·</span> 下载后双击启动</p>
+        </div>
+        <a class="button button--gold" href="https://github.com/Saoker-Liu/FOGBOUND/raw/refs/tags/v1.0.0/FOGBOUND-v1.0.0.exe">下载游戏 <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner shell">
+      <a class="wordmark" href="#top" aria-label="回到页首">
+        <img src="media/anchor.svg" alt="" width="25" height="25"><span>FOGBOUND</span>
+      </a>
+      <nav aria-label="项目链接">
+        <a href="https://github.com/Saoker-Liu/FOGBOUND/releases/tag/v1.0.0">发布记录</a>
+        <a href="https://github.com/Saoker-Liu/FOGBOUND">GitHub ↗</a>
+      </nav>
+    </div>
+  </footer>
+
+  <dialog id="reel" class="reel" aria-labelledby="reel-title">
+    <div class="reel__header">
+      <h2 id="reel-title">雾海对弈 · 实机短片</h2>
+      <form method="dialog">
+        <button type="submit" class="reel__close" autofocus aria-label="关闭短片">×</button>
+      </form>
+    </div>
+    <video id="reel-video" controls playsinline preload="none" aria-labelledby="reel-title"></video>
+  </dialog>
+</body>
+</html>

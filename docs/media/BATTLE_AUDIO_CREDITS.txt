@@ -1,0 +1,16 @@
+雾海对弈战斗音效素材
+
+下列录音及声音素材来自 Freesound，均以 CC0 1.0 发布。本游戏对素材做了剪辑、均衡、衰减和混音。
+https://creativecommons.org/publicdomain/zero/1.0/
+
+落水与鱼雷水声
+Water splash — nilbul — https://freesound.org/people/nilbul/sounds/404829/
+Rock Splash — Fission9 — https://freesound.org/people/Fission9/sounds/583348/
+
+出牌、舰体撞击、补给和修复
+handle_1.wav — blaukreuz — https://freesound.org/people/blaukreuz/sounds/459640/
+Metal Hit — NachtmahrTV — https://freesound.org/people/NachtmahrTV/sounds/556708/
+Ratchet.wav — KenRT — https://freesound.org/people/KenRT/sounds/319996/
+
+炮击
+cannon.mp3 — Kneeling — https://freesound.org/people/Kneeling/sounds/448002/
