@@ -14,8 +14,8 @@
   <link rel="canonical" href="https://saoker-liu.github.io/FOGBOUND/">
   <link rel="icon" type="image/svg+xml" href="media/anchor.svg">
   <link rel="preload" as="image" href="media/voyage.webp">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="site.js"></script>
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script defer src="site.js?v=4"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到内容</a>
@@ -36,8 +36,6 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="title">
-      <video class="hero__backdrop" id="sea-motion" muted playsinline loop preload="none" poster="media/voyage.webp"
-        data-src="media/voyage.mp4?v=2" aria-hidden="true" tabindex="-1"></video>
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__inner shell">
         <div class="hero__content">
@@ -47,17 +45,12 @@
           <p class="hero__description">在迷雾中布阵、侦察，以手中的战术卡指挥舰队。</p>
           <div class="hero__actions">
             <a class="button button--gold" href="https://github.com/Saoker-Liu/FOGBOUND/raw/refs/heads/main/FOGBOUND-v1.0.0.exe">下载 Windows x64 <span aria-hidden="true">↓</span></a>
-            <a class="button button--glass" href="media/battle-reel.mp4" id="open-reel"
-               data-reel-title="雾海对弈 · 战斗混剪" data-poster="media/battle-reel.webp">
+            <a class="button button--glass" href="#footage">
               <span class="play-icon" aria-hidden="true"></span>观看战斗混剪
             </a>
           </div>
           <p class="hero__edition">v1.0.0 <span aria-hidden="true">·</span> 简体中文</p>
         </div>
-        <button type="button" class="motion-control" id="motion-toggle" aria-pressed="false" hidden>
-          <span class="motion-control__icon" aria-hidden="true"></span>
-          <span class="sr-only">暂停背景动画</span>
-        </button>
       </div>
     </section>
 
@@ -71,43 +64,15 @@
 
     <section class="section footage shell" id="footage" aria-labelledby="footage-heading">
       <header class="section__heading" data-reveal>
-        <p class="eyebrow"><span>战斗演示</span></p>
         <h2 id="footage-heading">照明、重炮与防空</h2>
       </header>
-      <div class="footage__layout" data-reveal>
-        <figure class="screen" id="clip-panel" role="tabpanel" aria-labelledby="clip-tab-battle-reel">
-          <div class="screen__window">
-            <video class="clip-video" id="clip-video" controls playsinline muted loop preload="none"
-              src="media/battle-reel.mp4" poster="media/battle-reel.webp" aria-label="战斗混剪">
-              <a href="media/battle-reel.mp4">播放战斗混剪</a>
-            </video>
-          </div>
-          <figcaption class="screen__caption">
-            <strong id="clip-title">战斗混剪</strong>
-            <span id="clip-caption">大范围照明、五舰沉没和三轮防空拦截。</span>
-          </figcaption>
-        </figure>
-        <div class="clip-tabs" id="clip-tabs" role="tablist" aria-label="战斗片段">
-          <button type="button" class="clip-tab" role="tab" id="clip-tab-battle-reel"
-            aria-controls="clip-panel" aria-selected="true" data-clip="battle-reel" data-caption="大范围照明、五舰沉没和三轮防空拦截。">
-            <img src="media/battle-reel.webp" alt="" width="144" height="81" loading="lazy">
-            <span class="clip-tab__title">战斗混剪</span>
-            <span class="play-icon" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="clip-tab" role="tab" id="clip-tab-lamp-heavy"
-            aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="lamp-heavy" data-caption="「大灯泡！」照亮 29 格海域。「来个大家伙！」一轮重炮击沉五艘敌舰。">
-            <img src="media/lamp-heavy.webp" alt="" width="144" height="81" loading="lazy">
-            <span class="clip-tab__title">照明与重炮</span>
-            <span class="play-icon" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="clip-tab" role="tab" id="clip-tab-flak-falls"
-            aria-controls="clip-panel" aria-selected="false" tabindex="-1" data-clip="flak-falls" data-caption="「猎火鸡大赛！」把防空范围从 14 格扩大到 50 格。连续三轮来袭的舰载机全部被击落。">
-            <img src="media/flak-falls.webp" alt="" width="144" height="81" loading="lazy">
-            <span class="clip-tab__title">连环拦截</span>
-            <span class="play-icon" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
+      <figure class="screen" data-reveal>
+        <video class="battle-video" id="battle-video" controls playsinline muted loop preload="none"
+          src="media/battle-reel.mp4" poster="media/battle-reel.webp?v=4" aria-label="战斗混剪">
+          <a href="media/battle-reel.mp4">播放战斗混剪</a>
+        </video>
+        <figcaption class="screen__caption">「大灯泡！」揭开敌阵，重炮一轮击沉五艘敌舰。扩大的防空圈连续拦下三轮空袭。</figcaption>
+      </figure>
     </section>
 
     <section class="section campaign" id="campaign" aria-labelledby="campaign-heading">
@@ -164,30 +129,150 @@
       </div>
     </section>
 
-    <section class="section modes shell" id="modes" aria-labelledby="modes-heading">
-      <div class="modes__copy" data-reveal>
+    <section class="section shell" id="modes" aria-labelledby="modes-heading">
+      <header class="section__heading" data-reveal>
         <p class="eyebrow"><span>自由演习与局域网</span></p>
         <h2 id="modes-heading">组舰队，配牌组</h2>
-        <p>选择海图、自定义舰队和战术牌。自由演习对阵电脑，也可以在同一局域网和朋友交手。</p>
-        <dl class="tactics" id="tactic-details" aria-live="polite">
-          <dt id="tactic-title">信号弹</dt>
-          <dd class="tactics__type" id="tactic-type">侦察</dd>
-          <dd id="tactic-caption">划亮邻近海域，为接下来的炮击确认目标。</dd>
-        </dl>
-      </div>
-      <div class="card-fan" aria-label="查看战术牌" data-reveal>
-        <button class="tactic-card" type="button" aria-label="信号弹"
-          aria-pressed="true" aria-controls="tactic-details" data-type="侦察" data-caption="划亮邻近海域，为接下来的炮击确认目标。">
-          <img src="media/card-flare.webp" alt="" width="384" height="576" loading="lazy">
-        </button>
-        <button class="tactic-card" type="button" aria-label="舰载战斗机"
-          aria-pressed="false" aria-controls="tactic-details" data-type="航空" data-caption="争夺制空权，限制对方派出其他类型的舰载机。">
-          <img src="media/card-carrier_fighter.webp" alt="" width="384" height="576" loading="lazy">
-        </button>
-        <button class="tactic-card" type="button" aria-label="猎火鸡大赛！"
-          aria-pressed="false" aria-controls="tactic-details" data-type="战术王牌" data-caption="让一艘己舰的防空半径扩大 2 格，持续 3 个己方回合。">
-          <img src="media/card-turkey_shoot.webp" alt="" width="384" height="576" loading="lazy">
-        </button>
+        <p>选择海图和舰队，再用战术牌制定打法。点击卡牌查看游戏内规则。</p>
+      </header>
+      <div data-reveal>
+        <div class="deck-filters" role="group" aria-label="按战术筛选卡牌" hidden>
+          <button class="deck-filter" type="button" aria-pressed="true" aria-controls="deck-grid"
+            data-group="all" data-summary="从照明引导重炮到叠加防空，战术牌的取舍取决于舰型、行动力与海图。">全部 20 张</button>
+          <button class="deck-filter" type="button" aria-pressed="false" aria-controls="deck-grid"
+            data-group="gunnery" data-summary="先照明找出敌舰，再选用大范围炮击，或装填穿甲弹以对付装甲舰。">侦察与炮击</button>
+          <button class="deck-filter" type="button" aria-pressed="false" aria-controls="deck-grid"
+            data-group="aviation" data-summary="战斗机争夺制空权，防空强化可与「猎火鸡大赛！」叠加，保护舰队免遭空袭。">航空与防空</button>
+          <button class="deck-filter" type="button" aria-pressed="false" aria-controls="deck-grid"
+            data-group="antisub" data-summary="声呐迫使潜艇上浮，深弹和声导鱼雷也能直接打击水下目标。">潜艇与反潜</button>
+          <button class="deck-filter" type="button" aria-pressed="false" aria-controls="deck-grid"
+            data-group="mines" data-summary="先侦察标出雷区，再派扫雷舰开路。磁性水雷会在敌舰接近时引爆。">布雷与扫雷</button>
+          <button class="deck-filter" type="button" aria-pressed="false" aria-controls="deck-grid"
+            data-group="logistics" data-summary="用补给换取行动力，让受损舰修复、借烟幕掩护或撤出交火海域。">机动与后勤</button>
+        </div>
+        <p class="deck-summary" id="deck-summary" aria-live="polite">从照明引导重炮到叠加防空，战术牌的取舍取决于舰型、行动力与海图。</p>
+        <ul class="deck-grid" id="deck-grid" role="list" aria-label="战术卡牌">
+          <li data-group="gunnery">
+            <a class="tactic-card" href="media/card-heavy_salvo.webp" aria-label="来个大家伙！"
+              data-category="侦察与炮击" data-rule="由战列舰开火，打击落点及距离 2 格内的海域。重炮的穿甲等级高于主炮。">
+              <img src="media/card-heavy_salvo.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="aviation">
+            <a class="tactic-card" href="media/card-turkey_shoot.webp" aria-label="猎火鸡大赛！"
+              data-category="航空与防空" data-rule="使一艘存活己舰的防空半径增加 2 格，持续 3 个己方回合。可以与「防空强化」叠加。">
+              <img src="media/card-turkey_shoot.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="antisub">
+            <a class="tactic-card" href="media/card-acoustic_torpedo.webp" aria-label="声导鱼雷"
+              data-category="潜艇与反潜" data-rule="沿选定行发射，自动追向途中第一个距离 1 格以内的目标，包括潜航中的潜艇。造成普通鱼雷伤害。">
+              <img src="media/card-acoustic_torpedo.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="mines">
+            <a class="tactic-card" href="media/card-magnetic_mine.webp" aria-label="磁性水雷"
+              data-category="布雷与扫雷" data-rule="须有存活的布雷舰或布雷艇。将敌方海图上的一颗己方水雷改为磁性水雷。敌舰靠近至 1 格时引爆，机动途中也会触发。深海命中击沉整舰，浅滩命中损伤一格。">
+              <img src="media/card-magnetic_mine.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="logistics">
+            <a class="tactic-card" href="media/card-maneuver.webp" aria-label="战术机动"
+              data-category="机动与后勤" data-rule="完好的己方舰船可移动至多 2 格，途中可经过存活的友舰。目的地须有足够的空位。">
+              <img src="media/card-maneuver.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="gunnery">
+            <a class="tactic-card" href="media/card-lamp.webp" aria-label="大灯泡！"
+              data-category="侦察与炮击" data-rule="炮击舰照亮敌方落点及距离 3 格内的海域，持续 4 个己方回合。">
+              <img src="media/card-lamp.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="aviation">
+            <a class="tactic-card" href="media/card-carrier_bomber.webp" aria-label="舰载轰炸机"
+              data-category="航空与防空" data-rule="轰炸落点与相邻四格。每格造成 1 点伤害，可越过礁石、烟雾和装甲。防空逐格拦截，失去制空权时停飞。">
+              <img src="media/card-carrier_bomber.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="antisub">
+            <a class="tactic-card" href="media/card-depth_charge.webp" aria-label="深水炸弹"
+              data-category="潜艇与反潜" data-rule="由屏卫舰攻击敌图落点及相邻 4 格。每个覆盖的潜艇舰身格受损一次。">
+              <img src="media/card-depth_charge.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="mines">
+            <a class="tactic-card" href="media/card-lay_mines.webp" aria-label="布雷"
+              data-category="布雷与扫雷" data-rule="布雷舰可再布 5 颗，布雷艇可再布 3 颗。水雷随机布在敌方空深海格。">
+              <img src="media/card-lay_mines.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="logistics">
+            <a class="tactic-card" href="media/card-smoke.webp" aria-label="烟雾发生器"
+              data-category="机动与后勤" data-rule="屏卫舰释放烟幕，覆盖舰身及周围 2 格，持续 2 个己方回合。烟幕遮蔽舰位和受损格，并抵挡炮击。">
+              <img src="media/card-smoke.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="gunnery">
+            <a class="tactic-card" href="media/card-flare.webp" aria-label="信号弹"
+              data-category="侦察与炮击" data-rule="炮击舰照亮敌方落点及距离 2 格内的海域，持续 3 个己方回合。">
+              <img src="media/card-flare.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="aviation">
+            <a class="tactic-card" href="media/card-carrier_fighter.webp" aria-label="舰载战斗机"
+              data-category="航空与防空" data-rule="夺取全场制空权，持续 2 个己方回合。期间对方只能起飞舰载战斗机争夺制空权。">
+              <img src="media/card-carrier_fighter.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="antisub">
+            <a class="tactic-card" href="media/card-active_sonar.webp" aria-label="主动声呐"
+              data-category="潜艇与反潜" data-rule="发现落点周围 2 格内的潜艇，并迫使它们保持上浮，直到对方第 3 次开始回合。">
+              <img src="media/card-active_sonar.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="mines">
+            <a class="tactic-card" href="media/card-sweep.webp" aria-label="扫雷"
+              data-category="布雷与扫雷" data-rule="选择一艘扫雷舰或扫雷艇，将舰身周围的清扫半径扩大至 2 格，持续本回合及下一个己方回合，机动途中同样生效。">
+              <img src="media/card-sweep.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="logistics">
+            <a class="tactic-card" href="media/card-supply.webp" aria-label="后勤补给"
+              data-category="机动与后勤" data-rule="本回合增加 2 点行动力，可超过回合上限。">
+              <img src="media/card-supply.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="gunnery">
+            <a class="tactic-card" href="media/card-armor_piercing.webp" aria-label="穿甲弹"
+              data-category="侦察与炮击" data-rule="为一艘炮击舰装填。它的下一次炮击穿甲提升一级，最高为「来个大家伙！」级。覆盖已装填的高爆弹。">
+              <img src="media/card-armor_piercing.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="aviation">
+            <a class="tactic-card" href="media/card-aa_reinforcement.webp" aria-label="防空强化"
+              data-category="航空与防空" data-rule="使一艘存活己舰的防空半径增加 1 格，持续 2 个己方回合。零防空舰也能获得防空，各层强化独立计时并叠加。">
+              <img src="media/card-aa_reinforcement.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="antisub">
+            <a class="tactic-card" href="media/card-asw_aircraft.webp" aria-label="反潜机"
+              data-category="潜艇与反潜" data-rule="由航空舰在敌方随机 3 个非礁石格投下浮标。浮标发现并迫使周围 2 格内的潜艇上浮，到对方第 3 次开始回合时失效。失去制空权时停飞。">
+              <img src="media/card-asw_aircraft.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="mines">
+            <a class="tactic-card" href="media/card-recon.webp" aria-label="侦察"
+              data-category="布雷与扫雷" data-rule="标记距己方选定点 3 格内的暗礁与水雷。">
+              <img src="media/card-recon.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+          <li data-group="logistics">
+            <a class="tactic-card" href="media/card-repair.webp" aria-label="损害管制"
+              data-category="机动与后勤" data-rule="修复存活的己方舰船上一个中弹格。">
+              <img src="media/card-repair.webp" alt="" width="420" height="630" loading="lazy" decoding="async">
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -214,14 +299,18 @@
     </div>
   </footer>
 
-  <dialog id="reel" class="reel" aria-labelledby="reel-title">
-    <div class="reel__header">
-      <h2 id="reel-title">雾海对弈 · 战斗混剪</h2>
-      <form method="dialog">
-        <button type="submit" class="reel__close" autofocus aria-label="关闭短片">×</button>
-      </form>
+  <dialog id="card-detail" class="card-detail" aria-labelledby="card-detail-title">
+    <form method="dialog">
+      <button type="submit" class="card-detail__close" autofocus aria-label="关闭卡牌详情">×</button>
+    </form>
+    <div class="card-detail__layout">
+      <img id="card-detail-image" src="media/card-flare.webp" alt="" width="420" height="630">
+      <div>
+        <p class="eyebrow" id="card-detail-group"></p>
+        <h2 id="card-detail-title"></h2>
+        <p class="card-detail__description" id="card-detail-description"></p>
+      </div>
     </div>
-    <video id="reel-video" controls playsinline preload="none" aria-labelledby="reel-title"></video>
   </dialog>
 </body>
 </html>
